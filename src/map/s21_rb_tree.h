@@ -261,9 +261,7 @@ class RBTree {
     while (begin_ != nullptr && begin_->left_ != nullptr) {
       begin_ = begin_->left_;
     }
-    auto iter = iterator(
-        static_cast<typename iterator::conditional_node_ptr>(begin_),
-        reinterpret_cast<typename iterator::conditional_tree_ptr>(this));
+    auto iter = iterator(begin_,this);
 
     return iter;
   }

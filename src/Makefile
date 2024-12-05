@@ -21,7 +21,8 @@ memmory: test
 	valgrind --track-origins=yes --leak-check=full --show-leak-kinds=all ./$(TEST_NAME)
 
 format:
-	clang-format -i *.cc *.h in_addition/*.cc *.h
+	clang-format -style=google -i */*.cc
+	clang-format -style=google -i */*.h
 
 clean: 
 	rm -rf $(TEST_NAME) *.o *.a test.dSYM
